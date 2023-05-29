@@ -22,9 +22,10 @@ public class PermisosStaticTest {
 
     @ParameterizedTest
     @CsvSource({
-            "GABRIEL,231,PERMISSION: CRUD",
-            "PABLO,321,PERMISSION: R",
-            "JUAN,1234,PERMISSION: CR"
+            "GABRIEL,231,PERMISSION: CRUD -",
+            "PABLO,321,PERMISSION: R -",
+            "JUAN,1234,PERMISSION: CR -",
+            "MARIA,123,Incorrect MARIA and 123"
     }
     )
     public void verifyRolesStatic(String usr, String psw, String expectedResult){
@@ -32,4 +33,5 @@ public class PermisosStaticTest {
         String actualResult = permisosStatic.getRoles(usr, psw);
         Assertions.assertTrue(actualResult.contains(expectedResult), "ERROR");
     }
+
 }
